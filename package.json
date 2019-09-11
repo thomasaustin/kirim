@@ -1,0 +1,62 @@
+{
+	"name": "kirim",
+	"displayName": "Kirim",
+	"description": "Send test HTML emails within Visual Studio Code",
+	"version": "0.0.1",
+	"publisher": "thomasaustin",
+	"author": {
+		"name": "Thomas Austin"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thomasaustin/kirim"
+	},
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Email",
+		"HTML",
+		"Send",
+		"Test"
+	],
+	"galleryBanner": {
+		"color": "#222222",
+		"theme": "dark"
+	},
+	"license": "MIT",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.kirimsend",
+				"title": "Kirim: Send Email"
+			},
+			{
+				"command": "extension.kirimconfig",
+				"title": "Kirim: Create Config"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/node": "^12.7.4",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.3",
+		"vscode": "^1.1.36"
+	},
+	"dependencies": {
+		"@sendgrid/mail": "^6.4.0"
+	}
+}
