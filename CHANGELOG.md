@@ -1,5 +1,6 @@
 ## 0.0.3 (13/09/2019)
 * __Maintenance__: Formatted the README file around the commands section
+* __Maintenance__: Added the Kirim icon
 
 ## 0.0.2 (13/09/2019)
 * __Enhancement__: Redeveloped the plugin to include front matter for the config

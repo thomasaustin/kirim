@@ -23,6 +23,7 @@
 		"Send",
 		"Test"
 	],
+	"icon": "icon.png",
 	"galleryBanner": {
 		"color": "#DCC8FF",
 		"theme": "light"
