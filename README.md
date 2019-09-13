@@ -11,8 +11,7 @@ Before you get started you'll need to set up a SendGrid account and generate an 
 3. With your HTML email active, open the command palette `Ctrl-Shift-P` (Windows/Linux) or `Cmd-Shift-P` (macOS) and search 'Kirim'.
 4. Select 'Kirim: Load Config' to generate the configuration file which will be used to contain your API key and basic email details for sending.
 5. Fill out the details in the config template placed at the top of your html (see example below).
-```
----
+~~~~
 name: Test Team
 key: xxxx
 to:
@@ -20,8 +19,7 @@ to:
   - test2@test.com
 from: Test Name <test@test.com>
 subject: This is a test email
----
-```
+~~~~
 6. With your HTML email active, open the command palette again then search and select 'Kirim: Send Email'.
 
 ## Config Commands

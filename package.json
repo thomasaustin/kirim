@@ -2,7 +2,7 @@
 	"name": "kirim",
 	"displayName": "Kirim",
 	"description": "Send test HTML emails within Visual Studio Code",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "thomasaustin",
 	"author": {
 		"name": "Thomas Austin"
@@ -25,8 +25,8 @@
 	],
 	"icon": "icon.png",
 	"galleryBanner": {
-		"color": "#DCC8FF",
-		"theme": "light"
+		"color": "#1c252d",
+		"theme": "dark"
 	},
 	"license": "MIT",
 	"activationEvents": [

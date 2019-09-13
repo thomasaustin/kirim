@@ -1,4 +1,7 @@
 ## 0.0.3 (13/09/2019)
+* __Maintenance__: Fixed bug with README file
+
+## 0.0.3 (13/09/2019)
 * __Maintenance__: Formatted the README file around the commands section
 * __Maintenance__: Added the Kirim icon
 
