@@ -28,8 +28,8 @@ subject: This is a test email
 
 You also have the ability to load, save, clear, and delete the config template. Below is a brief overview for each command.
 
-Kirim: Load Config - Used to load the default and saved config templates.
-Kirim: Save Config - Used to save config templates to load in other emails. The name field in the config references the saved template.
-Kirim: Clear Config - Used to remove the config template from the email before dispatch. Note: There's no need to clear the config before sending as it will be removed upon send.
-Kirim: Delete Config - Used to delete saved config templates.
-Kirim: Send Email - Used to send the HTML to the specified email addresses.
+- **Kirim: Load Config** - Used to load the default and saved config templates.
+- **Kirim: Save Config** - Used to save config templates to load in other emails. The name field in the config references the saved template.
+- **Kirim: Clear Config** - Used to remove the config template from the email before dispatch. Note: There's no need to clear the config before sending as it will be removed upon send.
+- **Kirim: Delete Config** - Used to delete saved config templates.
+- **Kirim: Send Email** - Used to send the HTML to the specified email addresses.
