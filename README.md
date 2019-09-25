@@ -1,15 +1,15 @@
 # Kirim
 
-This extension was developed to send test HTML emails without leaving Visual Studio Code.
+Effortlessly send test HTML emails without leaving Visual Studio Code.
 
 ## Getting Started
 
-Before you get started you'll need to set up a SendGrid account and generate an API key. Note: SendGrid offers free accounts if you're sending less than 100 emails per day, any more than that and you'll need to upgrade to a paid plan.
+Before anything you'll need to set up a SendGrid account and generate an API key which is used to send your test emails. Note: SendGrid offers free accounts if you're sending less than 100 emails per day, any more than that and you'll need to upgrade to a paid plan.
 
 1. Install this extension from the Visual Studio Code Marketplace.
-2. Open your HTML email in the editor then initiate the command palette `Ctrl-Shift-P` (Windows/Linux) or `Cmd-Shift-P` (macOS) and search 'Kirim'.
-4. Select 'Kirim: Load Config' to generate a default configuration file which will be used to contain your api key and basic email details for sending.
-5. Fill out the details in the config template placed at the top of your HTML email (see example below).
+2. Open your HTML email in the editor and initiate the command palette `Ctrl-Shift-P` (Windows/Linux) or `Cmd-Shift-P` (macOS) and search 'Kirim'.
+3. Select 'Kirim: Load Config' to generate the default config file which will be used to contain your API key and basic email details for sending.
+4. Fill in the config details which will be placed at the start of your HTML email (see example below).
 ~~~~
 name: Test Team
 key: xxxx
@@ -19,14 +19,18 @@ to:
 from: Test Name <test@test.com>
 subject: This is a test email
 ~~~~
-6. With your HTML email active, open the command palette again and search then select 'Kirim: Send Email'.
+5. With your HTML email active, open the command palette again and search then select 'Kirim: Send Email'.
+
+**Tip:** Click on Kirim in the status bar to easily launch a list of commands.
 
 ## Commands
 
-Kirim makes it easy to load, save, clear or delete your config templates, as well as send HTML emails. See below for an explanation of each command.
+Not only does Kirim send emails but it also allows you to to save, load, clear and delete your send configs.
 
-- **Kirim: Load Config** - Used to load the default and saved config templates.
-- **Kirim: Save Config** - Used to save config templates to load in other emails. Note: The name field in the config references the saved template.
-- **Kirim: Clear Config** - Used to remove the config template from the email before dispatch. Note: There's no need to clear the config before sending as it won't be included in the send command.
-- **Kirim: Delete Config** - Used to delete saved config templates.
-- **Kirim: Send Email** - Used to send a HTML email to the specified email addresses in your config template.
+| Command | Description |
+|--|--|
+| Load Config | Used to load the default and saved config templates |
+| Save Config | Saves the config for use in other emails |
+| Clear Config | Clears the config from the start of your email |
+| Delete Config | Deletes the selected config from your saved list' |
+| Send Email | Sends your email to the defined config details |
