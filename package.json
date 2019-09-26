@@ -2,7 +2,7 @@
 	"name": "kirim",
 	"displayName": "Kirim",
 	"description": "Effortlessly send test HTML emails without leaving Visual Studio Code",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"publisher": "thomasaustin",
 	"author": {
 		"name": "Thomas Austin"
@@ -64,7 +64,7 @@
 		"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
-		"@types/node": "^12.7.7",
+		"@types/node": "^12.7.8",
 		"tslint": "^5.20.0",
 		"typescript": "^3.6.3",
 		"vscode": "^1.1.36"
