@@ -29,8 +29,8 @@ Not only does Kirim send emails but it also allows you to to save, load, clear a
 
 | Command | Description |
 |--|--|
-| Load Config | Used to load the default and saved config templates |
+| Load Config | Loads the default or other saved configs into an email |
 | Save Config | Saves the config for use in other emails |
-| Clear Config | Clears the config from the start of your email |
-| Delete Config | Deletes the selected config from your saved list' |
-| Send Email | Sends your email to the defined config details |
+| Clear Config | Clears the config from the start of an email |
+| Delete Config | Deletes selected config from the saved list |
+| Send Email | Sends an email to the defined config details |

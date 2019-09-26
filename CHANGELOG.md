@@ -1,3 +1,6 @@
+## 0.0.8 (26/09/2019)
+* __Maintenance__: Added additional error handling
+
 ## 0.0.7 (25/09/2019)
 * __Enhancement__: Added custom status bar item and dropdown for easier command selection
 * __Maintenance__: Extension maintenance and optimisations
