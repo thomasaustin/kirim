@@ -2,7 +2,7 @@
 	"name": "kirim",
 	"displayName": "Kirim",
 	"description": "Effortlessly send test HTML emails without leaving Visual Studio Code",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"publisher": "thomasaustin",
 	"author": {
 		"name": "Thomas Austin"
