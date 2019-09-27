@@ -25,10 +25,10 @@ export function activate(context: vscode.ExtensionContext) {
         const showCommands = () => {
                 let commandList = [
                         { label: 'Send Email', description: 'Sends an email to the defined config details', command: 'kirim.sendemail' },
-                        { label: 'Clear Config', description: 'Clears the config from the start of an email', command: 'kirim.clearconfig' },
-                        { label: 'Load Config', description: 'Loads the default or other saved configs into an email', command: 'kirim.loadconfig' },
+                        { label: 'Clear Config', description: 'Clears the config from the top of an email', command: 'kirim.clearconfig' },
+                        { label: 'Load Config', description: 'Loads the default or other saved configs', command: 'kirim.loadconfig' },
                         { label: 'Save Config', description: 'Saves the config for use in other emails', command: 'kirim.saveconfig' },
-                        { label: 'Delete Config', description: 'Deletes selected config from the saved list', command: 'kirim.deleteconfig' }
+                        { label: 'Delete Config', description: 'Deletes a config from the saved list', command: 'kirim.deleteconfig' }
                 ];
                 async function showQuickPick() {
                         let commandName = await vscode.window.showQuickPick(commandList, {
