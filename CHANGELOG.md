@@ -1,3 +1,6 @@
+## 0.0.10 (30/09/2019)  
+* __Maintenance__: Fixed a bug found in the README file
+
 ## 0.0.9 (27/09/2019)  
 * __Maintenance__: Updated the README file for clearer documentation
 
