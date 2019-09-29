@@ -1,8 +1,8 @@
 # Kirim
 
-An extension built to effortlessly send test `HTML` emails without leaving the editing environment.
+An extension built to effortlessly send test `HTML` emails without leaving Visual Studio Code.
 
-Kirim uses a `YAML` front matter block at the top of the `HTML` document to store and process send data. This block is referred to a config in the extension and can be saved in different configurations to use across other emails.
+Kirim uses a `YAML` front matter block at the top of the `HTML` document to store and process send data. This block is referred to a config in the extension and can be saved in different configurations to use across other emails.
 
 ~~~~
 name: Test Team
@@ -14,7 +14,7 @@ from: Test Name <test@test.com>
 subject: This is a test email
 ~~~~
 
-**Note:** It is essential to create a [free SendGrid account](https://signup.sendgrid.com) and [generate an API key](https://sendgrid.com/docs/ui/account-and-settings/api-keys/#creating-an-api-key) for Kirim to connect and dispatch each test send.
+**Note:** It is essential to create a [free SendGrid account](https://signup.sendgrid.com) and [generate an API key](https://sendgrid.com/docs/ui/account-and-settings/api-keys/#creating-an-api-key) for Kirim to connect and dispatch each test send.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ subject: "Woo! This is a test email"
 
 4. Initiate the command palette again and select `Kirim: Send Email`.
 
-### Config Overview
+#### Config Overview
 
 **name** - A name which identifies the config once saved  
 **key** - The generated SendGrid API key  
@@ -39,7 +39,7 @@ subject: "Woo! This is a test email"
 ## Commands
 
 | Command | Description |
-|--|--|
+|:--|:--|
 | Load Config | Loads the default or other saved configs |
 | Save Config | Saves the config for use in other emails |
 | Clear Config | Clears the config from the top of an email |
