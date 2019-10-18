@@ -3,3 +3,4 @@ out/**/*.map
 src/**
 .gitignore
 tsconfig.json
+.prettierrc
