@@ -1,8 +1,8 @@
 {
 	"name": "kirim",
 	"displayName": "Kirim",
-	"description": "Effortlessly send test HTML emails without leaving Visual Studio Code",
-	"version": "0.0.10",
+	"description": "Effortlessly send test HTML emails without leaving Visual Studio Code",
+	"version": "0.0.11",
 	"publisher": "thomasaustin",
 	"author": {
 		"name": "Thomas Austin"
@@ -36,6 +36,14 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "kirim.sendemail",
+				"title": "Kirim: Send Email"
+			},
+			{
+				"command": "kirim.clearconfig",
+				"title": "Kirim: Clear Config"
+			},
+			{
 				"command": "kirim.loadconfig",
 				"title": "Kirim: Load Config"
 			},
@@ -44,16 +52,8 @@
 				"title": "Kirim: Save Config"
 			},
 			{
-				"command": "kirim.clearconfig",
-				"title": "Kirim: Clear Config"
-			},
-			{
 				"command": "kirim.deleteconfig",
 				"title": "Kirim: Delete Config"
-			},
-			{
-				"command": "kirim.sendemail",
-				"title": "Kirim: Send Email"
 			}
 		]
 	},
@@ -64,7 +64,7 @@
 		"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
-		"@types/node": "^12.7.8",
+		"@types/node": "^12.11.1",
 		"tslint": "^5.20.0",
 		"typescript": "^3.6.3",
 		"vscode": "^1.1.36"
