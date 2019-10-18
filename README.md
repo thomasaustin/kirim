@@ -4,7 +4,7 @@ An extension built to effortlessly send test `HTML` emails without leaving Visua
 
 Kirim uses a `YAML` front matter block at the top of the `HTML` document to store and process send data. This block is referred to a config in the extension and can be saved in different configurations to use across other emails.
 
-~~~~
+~~~~text
 name: Test Team
 key: xxxx
 to:
@@ -22,7 +22,7 @@ subject: This is a test email
 2. Select `Kirim: Load Config` to generate a default config block placed at the top of the `HTML` document.
 3. Enter the required data in the newly created config block. If the data contains any of these characters `:-{}[]!#|>&%@` wrap it in quotes to avoid errors (example below).
 
-~~~~
+~~~~text
 subject: "Woo! This is a test email"
 ~~~~
 
@@ -40,8 +40,8 @@ subject: "Woo! This is a test email"
 
 | Command | Description |
 |:--|:--|
+| Send Email | Sends an email to the defined config details |
+| Clear Config | Clears the config from the top of an email |
 | Load Config | Loads the default or other saved configs |
 | Save Config | Saves the config for use in other emails |
-| Clear Config | Clears the config from the top of an email |
 | Delete Config | Deletes a config from the saved list |
-| Send Email | Sends an email to the defined config details |
