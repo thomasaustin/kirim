@@ -28,7 +28,7 @@ subject: "Woo! This is a test email"
 
 4. Initiate the command palette again and select `Kirim: Send Email`.
 
-#### Config Overview
+### Config Overview
 
 **name** - A name which identifies the config once saved  
 **key** - The generated SendGrid API key  
