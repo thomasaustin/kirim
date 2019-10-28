@@ -80,21 +80,25 @@ export function activate(context: vscode.ExtensionContext) {
                         vscode.window.showErrorMessage('Please load a config before sending.')
                         return
                 }
-                let editorDataExcerpt: any = fm(editorData.toString())
-                let emailData = {
-                        to: editorDataExcerpt.attributes['to'],
-                        from: editorDataExcerpt.attributes['from'],
-                        subject: editorDataExcerpt.attributes['subject'],
-                        html: editorDataExcerpt.body
+                try {
+                        let editorDataExcerpt: any = fm(editorData.toString())
+                        let emailData = {
+                                to: editorDataExcerpt.attributes['to'],
+                                from: editorDataExcerpt.attributes['from'],
+                                subject: editorDataExcerpt.attributes['subject'],
+                                html: editorDataExcerpt.body
+                        }
+                        sendgrid.setApiKey(editorDataExcerpt.attributes['key'])
+                        sendgrid.sendMultiple(emailData)
+                                .then(() => {
+                                        vscode.window.showInformationMessage('Your email has been successfully sent.')
+                                })
+                                .catch(error => {
+                                        vscode.window.showErrorMessage(error.toString())
+                                })
+                } catch (error) {
+                        vscode.window.showErrorMessage(error.toString())
                 }
-                sendgrid.setApiKey(editorDataExcerpt.attributes['key'])
-                sendgrid.sendMultiple(emailData)
-                        .then(() => {
-                                vscode.window.showInformationMessage('Your email has been successfully sent.')
-                        })
-                        .catch(error => {
-                                vscode.window.showErrorMessage(error.toString())
-                        })
         }
 
         context.subscriptions.push(vscode.commands.registerCommand('kirim.sendemail', sendEmail))
@@ -115,8 +119,12 @@ export function activate(context: vscode.ExtensionContext) {
                         vscode.window.showErrorMessage('There doesn’t seem to be a config to clear.')
                         return
                 }
-                let editorDataExcerpt = fm(editorData.toString()).body
-                fs.writeFileSync(editorPath, editorDataExcerpt)
+                try {
+                        let editorDataExcerpt = fm(editorData.toString()).body
+                        fs.writeFileSync(editorPath, editorDataExcerpt)
+                } catch (error) {
+                        vscode.window.showErrorMessage(error.toString())
+                }
         }
 
         context.subscriptions.push(vscode.commands.registerCommand('kirim.clearconfig', clearConfig))
@@ -139,7 +147,7 @@ export function activate(context: vscode.ExtensionContext) {
                         .filter(template => template.includes('thomasaustin.kirim'))
                         .map(template => template.replace(/thomasaustin.kirim.|.yaml/g, ''))
                 if (templateList.length <= 0) {
-                        let templateData = fs.readFileSync(path.join(__dirname, '../template/default.yaml'))
+                        let templateData = `---\nname: \nkey: \nto: \n  - \n  - \nfrom: \nsubject: \n---`
                         let editorDataExcerpt = fm(editorData.toString()).body
                         let dataMerge = [templateData, editorDataExcerpt].join('\n')
                         fs.writeFileSync(editorPath, dataMerge)
@@ -179,15 +187,19 @@ export function activate(context: vscode.ExtensionContext) {
                         vscode.window.showErrorMessage('Please load a config before saving.')
                         return
                 }
-                let editorDataExcerpt: any = fm(editorData.toString())
-                if (editorDataExcerpt.attributes['name'] === null) {
-                        vscode.window.showErrorMessage('Please specify a config name before saving.')
-                        return
+                try {
+                        let editorDataExcerpt: any = fm(editorData.toString())
+                        if (editorDataExcerpt.attributes['name'] === null) {
+                                vscode.window.showErrorMessage('Please specify a config name before saving.')
+                                return
+                        }
+                        let templateData = '---\n' + editorDataExcerpt.frontmatter + '\n---'
+                        let templateFilePath = templatePath + '.' + editorDataExcerpt.attributes['name'] + '.yaml'
+                        fs.writeFileSync(templateFilePath, templateData)
+                        vscode.window.showInformationMessage(editorDataExcerpt.attributes['name'] + ' has been successfully saved.')
+                } catch (error) {
+                        vscode.window.showErrorMessage(error.toString())
                 }
-                let templateData = '---\n' + editorDataExcerpt.frontmatter + '\n---'
-                let templateFilePath = templatePath + '.' + editorDataExcerpt.attributes['name'] + '.yaml'
-                fs.writeFileSync(templateFilePath, templateData)
-                vscode.window.showInformationMessage(editorDataExcerpt.attributes['name'] + ' has been successfully saved.')
         }
 
         context.subscriptions.push(vscode.commands.registerCommand('kirim.saveconfig', saveConfig))
