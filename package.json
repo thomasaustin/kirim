@@ -2,7 +2,7 @@
 	"name": "kirim",
 	"displayName": "Kirim",
 	"description": "Effortlessly send test HTML emails without leaving Visual Studio Code",
-	"version": "0.0.11",
+	"version": "0.0.12",
 	"publisher": "thomasaustin",
 	"author": {
 		"name": "Thomas Austin"
@@ -34,6 +34,15 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"title": "Kirim",
+			"properties": {
+				"kirim.authenticationToken": {
+					"type": "string",
+					"description": "SendGrid API key used to send test emails."
+				}
+			}
+		},
 		"commands": [
 			{
 				"command": "kirim.sendemail",
@@ -54,6 +63,10 @@
 			{
 				"command": "kirim.deleteconfig",
 				"title": "Kirim: Delete Config"
+			},
+			{
+				"command": "kirim.savekey",
+				"title": "Kirim: Save Key"
 			}
 		]
 	},
@@ -64,7 +77,7 @@
 		"postinstall": "node ./node_modules/vscode/bin/install"
 	},
 	"devDependencies": {
-		"@types/node": "^12.11.7",
+		"@types/node": "^12.12.3",
 		"tslint": "^5.20.0",
 		"typescript": "^3.6.4",
 		"vscode": "^1.1.36"
