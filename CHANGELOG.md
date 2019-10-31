@@ -1,3 +1,8 @@
+## 0.0.12 (01/11/2019)  
+* __Enhancement__: Added actions in some error messages to easily resolve issues  
+* __Enhancement__: Added a command to save the SendGrid API key in extension settings  
+* __Maintenance__: General maintenance and code optimisations
+
 ## 0.0.11 (18/10/2019)  
 * __Maintenance__: General maintenance and code optimisations
 
